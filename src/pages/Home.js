@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 function Home(props) {
@@ -6,6 +7,16 @@ function Home(props) {
     const [category, setCategory] = useState("");
     const [difficulty, setDifficulty] = useState("");
     const [numQuestions, setNumQuestions] = useState(10);
+
+    
+
+    async function getQuestions() {
+        axios.get(`https://opentdb.com/api.php?amount=${numQuestions}&category=${category}&difficulty=${difficulty}`)
+            .then((response) => {
+                props.setData(response.data.results);
+                props.setTriviaCategory(response.data.results[0].category);
+            })
+    }
 
     function startGame() {
         let catName = "";
@@ -36,6 +47,8 @@ function Home(props) {
             case "32": catName = "cartoons-animation"; break;
             default: catName = "error"; break;
         }
+        props.setNum0fQuestions(numQuestions);
+        getQuestions();
         navigate(`/${catName}`);
     }
 
