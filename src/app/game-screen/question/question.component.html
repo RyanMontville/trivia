@@ -1,4 +1,6 @@
-<h2><div [innerHTML]="questionData.question"></div></h2>
+{{questionStrg}}
+<hr/>
+<h2><div [innerHTML]="question"></div></h2>
 <ul>
     <li *ngFor="let answer of answers; let i = index"><div [innerHTML]="answer"></div></li>
 

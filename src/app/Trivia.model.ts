@@ -17,3 +17,39 @@ export class Question {
         public incorrect_answers: string[]
     ) { }
 }
+
+export class QuestionObject {
+    public question: string;
+    public type: string;
+    public category: string;
+    public correctAnswer: string;
+    public answers: string[];
+
+    constructor() {
+        this.question = "";
+        this.type = "";
+        this.category = "";
+        this.correctAnswer = "";
+        this.answers = [];
+    }
+
+    setQuestion(question: string) {
+        this.question = question;
+    }
+
+    setType(type: string) {
+        this.type = type;
+    }
+
+    setCategory(category: string) {
+        this.category = category;
+    }
+
+    setCorrectAnswer(correctAnswer: string) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    setAnswers(answers: string[]) {
+        this.answers = answers;
+    }
+}

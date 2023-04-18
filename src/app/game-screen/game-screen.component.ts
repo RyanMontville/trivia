@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Question } from '../Trivia.model';
+import { QuestionObject } from '../Trivia.model';
 
 @Component({
   selector: 'app-game-screen',
@@ -7,7 +7,14 @@ import { Question } from '../Trivia.model';
   styleUrls: ['./game-screen.component.css']
 })
 export class GameScreenComponent {
-  @Input() triviaData: Question[] = [];
+  @Input() triviaData: QuestionObject[] = [];
   currentQuestionIndex = 0;
-  answers: string[] = [];
+  score: number = 0;
+
+  onChoiceSelected(choiceSelected: number) {
+    if(choiceSelected===1) {
+      this.score = this.score + 1
+    }
+    this.currentQuestionIndex = this.currentQuestionIndex + 1;
+  }
 }

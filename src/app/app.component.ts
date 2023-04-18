@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Question, Trivia } from './Trivia.model';
+import { Question, QuestionObject, Trivia } from './Trivia.model';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,12 @@ import { Question, Trivia } from './Trivia.model';
 })
 export class AppComponent {
   title: string = 'trivia';
-  triviaData: Question[] = [];
+  triviaData: QuestionObject[] = [];
   hasGameStarted: boolean = false;
   score: number = 0;
   numberOfQuestions: number = 0;
 
-  onDataCreated(triviaData: Question[]) {
+  onDataCreated(triviaData: QuestionObject[]) {
     this.title = triviaData[0].category;
     this.triviaData = triviaData;
     this.numberOfQuestions = triviaData.length;
