@@ -1,2 +1,2 @@
-# trivia
-A trivia app that runs on React and uses  [Open Trivia's](https://opentdb.com/) API for the questions and answers
+# Trivia
+This app runs on Angular and get the trivia questions and answers from opentdb.com's API

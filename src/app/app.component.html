@@ -1,0 +1,8 @@
+<header>
+  <h2><a href="https://www.ryanmontville.com/">Ryan Montville</a> | {{title}}</h2>
+  <h2 *ngIf="numberOfQuestions !== 0">Score: {{score}}/{{numberOfQuestions}}</h2>
+</header>
+<main>
+  <app-start-screen *ngIf="!hasGameStarted" (dataCreated)="onDataCreated($event)" />
+</main>
+<app-game-screen *ngIf="hasGameStarted" [triviaData]="triviaData" />

@@ -1,0 +1,6 @@
+<h2><div [innerHTML]="questionData.question"></div></h2>
+<ul>
+    <li *ngFor="let answer of answers; let i = index"><div [innerHTML]="answer"></div></li>
+
+</ul>
+<button *ngFor="let answer of answers; let i = index" (click)="handleChoice(answer)"><div [innerHTML]="answer"></div></button>
