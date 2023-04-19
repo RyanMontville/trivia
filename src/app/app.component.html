@@ -2,7 +2,13 @@
   <h2><a href="https://www.ryanmontville.com/">Ryan Montville</a> | {{title}}</h2>
   <h2 *ngIf="numberOfQuestions !== 0">Score: {{score}}/{{numberOfQuestions}}</h2>
 </header>
-<main>
   <app-start-screen *ngIf="!hasGameStarted" (dataCreated)="onDataCreated($event)" />
+<app-game-screen 
+  *ngIf="hasGameStarted && !hasGameEnded" 
+  [triviaData]="triviaData" 
+  (playerScore)="onScoreChange($event)"/>
+
+<main *ngIf="hasGameEnded">
+  <h1>Game Over</h1>
+  <button (click)="playAgain()">Play Again</button>
 </main>
-<app-game-screen *ngIf="hasGameStarted" [triviaData]="triviaData" />

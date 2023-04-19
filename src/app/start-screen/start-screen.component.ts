@@ -29,7 +29,7 @@ export class StartScreenComponent {
           singleQuestion.setCorrectAnswer(data.results[i].correct_answer);
           let answerArray: string[] = [];
           if (data.results[i].type === "boolean") {
-            answerArray.push("true", "False");
+            answerArray.push("True", "False");
           } else {
             let randomNumber = Math.round(Math.random() * (4 - 1) + 1);
             let correct = data.results[i].correct_answer;
