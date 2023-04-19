@@ -9,6 +9,9 @@
   (playerScore)="onScoreChange($event)"/>
 
 <main *ngIf="hasGameEnded">
-  <h1>Game Over</h1>
-  <button (click)="playAgain()">Play Again</button>
+  <h1 class="game-over">Game Over</h1>
+  <h2 class="final-score">Final Score: {{score}}/{{numberOfQuestions}}</h2>
+  <section class="start-btn">
+    <button (click)="playAgain()" class="play-again-btn">Play Again</button>
+  </section>
 </main>

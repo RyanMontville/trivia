@@ -1,8 +1,18 @@
-{{questionStrg}}
-<hr/>
-<h2><div [innerHTML]="question"></div></h2>
-<ul>
-    <li *ngFor="let answer of answers; let i = index"><div [innerHTML]="answer"></div></li>
-
-</ul>
-<button *ngFor="let answer of answers; let i = index" (click)="handleChoice(answer)"><div [innerHTML]="answer"></div></button>
+<h2 class="trivia-question"><div [innerHTML]="question"></div></h2>
+<section class="output-container">
+    <div *ngFor="let output of outputArray">
+        <button 
+            *ngIf="output.type==='boolean-answer'" 
+            [innerHTML]="output.text" 
+            class={{output.color}}
+            (click)="handleChoice(output.text)"></button>
+        <button 
+            *ngIf="output.type==='multiple-answer'" 
+            [innerHTML]="output.text" 
+            class={{output.color}}
+            (click)="handleChoice(output.text)"></button>
+        <article 
+            *ngIf="output.type==='result'" 
+            class={{output.color}}>{{output.text}}</article>
+    </div>
+</section>

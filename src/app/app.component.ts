@@ -7,7 +7,7 @@ import { Question, QuestionObject, Trivia } from './Trivia.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'trivia';
+  title: string = 'Trivia';
   triviaData: QuestionObject[] = [];
   hasGameStarted: boolean = false;
   score: number = 0;
@@ -31,5 +31,8 @@ export class AppComponent {
   playAgain() {
     this.hasGameStarted = false;
     this.hasGameEnded = false;
+    this.score = 0;
+    this.numberOfQuestions = 0;
+    this.title = "Trivia"
   }
 }
