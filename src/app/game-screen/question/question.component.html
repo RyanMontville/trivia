@@ -5,11 +5,13 @@
             *ngIf="output.type==='boolean-answer'" 
             [innerHTML]="output.text" 
             class={{output.color}}
+            id={{output.text}} 
             (click)="handleChoice(output.text)"></button>
         <button 
             *ngIf="output.type==='multiple-answer'" 
             [innerHTML]="output.text" 
-            class={{output.color}}
+            class={{output.color}} 
+            id={{output.text}} 
             (click)="handleChoice(output.text)"></button>
         <article 
             *ngIf="output.type==='result'" 

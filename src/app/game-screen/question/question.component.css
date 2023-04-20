@@ -23,9 +23,14 @@
 }
 
 .output-container article {
-    padding: 100px;
-    font-size: 50px;
-    text-align: center;
+    padding: 10px;
+    transition: 0.2s linear;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .red {
@@ -45,4 +50,17 @@
 
 .yellow {
     background-color: yellow;
+}
+.full {
+    width: 800px;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.half {
+    width: 400px;
+}
+
+.result-answer {
+    height: 200px;
 }

@@ -23,7 +23,7 @@ export class StartScreenComponent {
 
         for (let i = 0; i < data.results.length; i++) {
           let singleQuestion = new QuestionObject();
-          singleQuestion.setQuestion(data.results[i].question);
+          singleQuestion.setQuestion((i+1) + ") " + data.results[i].question);
           singleQuestion.setType(data.results[i].type);
           singleQuestion.setCategory(data.results[i].category)
           singleQuestion.setCorrectAnswer(data.results[i].correct_answer);
