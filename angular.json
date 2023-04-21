@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/trivia",
             "index": "src/index.html",
-            "baseHref": "/trivia",
+            "baseHref": "./",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
