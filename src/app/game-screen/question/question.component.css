@@ -67,7 +67,7 @@
 
 @media only screen and (max-width: 750px) {
     .output-container button {
-        height: 80px;
+        height: 100px;
         width: 300px;
     }
 
@@ -84,6 +84,6 @@
     }
 
     .result-answer {
-        height: 80px;
+        height: 100px;
     }
 }
