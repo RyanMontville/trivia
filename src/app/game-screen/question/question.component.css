@@ -64,3 +64,26 @@
 .result-answer {
     height: 200px;
 }
+
+@media only screen and (max-width: 750px) {
+    .output-container button {
+        height: 80px;
+        width: 300px;
+    }
+
+    .output-container {
+        gap: 5px;
+    }
+
+    .full {
+        width: 300px;
+    }
+
+    .half {
+        width: 300px;
+    }
+
+    .result-answer {
+        height: 80px;
+    }
+}

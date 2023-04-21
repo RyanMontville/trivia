@@ -75,3 +75,22 @@ header {
     display: flex;
     justify-content: center;
   }
+
+  @media only screen and (min-width: 751px) {
+    .mobile-text {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    header {
+      margin: 5px;
+    }
+    .desktop-text {
+      display: none;
+    }
+    .mobile-text {
+      display: flex;
+      align-items: center !important;
+    }
+  }
