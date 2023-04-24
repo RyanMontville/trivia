@@ -15,6 +15,7 @@
             (click)="handleChoice(output.text)"></button>
         <article 
             *ngIf="output.type==='result'" 
-            class={{output.color}}>{{output.text}}</article>
+            class={{output.color}} 
+            [innerHTML]="output.text"></article>
     </div>
 </section>
