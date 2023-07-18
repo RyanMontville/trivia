@@ -5,5 +5,5 @@ The game is now live on GitHub pages. <a href="https://ryanmontville.github.io/t
 
 <div>
   <img src="https://github.com/RyanMontville/trivia/blob/main/screenshots/trivia-game-screen.png" alt="game screen" title="game screen" style="width: 70%; display: inline-block;"></img>
-  <img src="https://github.com/RyanMontville/trivia/blob/main/screenshots/trivia-mobile.png" alt="the game on mobile" title="the game on mobile" style="width: 20%; display: inline-block;"></img>
+  <img src="https://github.com/RyanMontville/trivia/blob/main/screenshots/trivia-mobile.png" alt="the game on mobile" title="the game on mobile" style="width: 18%; display: inline-block;"></img>
 </div>
