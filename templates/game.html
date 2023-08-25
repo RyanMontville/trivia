@@ -1,11 +1,13 @@
 {% include "header.html" %}
-<!--main content goes here-->
 
-    <!--question box-->
+<main>
+    <h2>{{ number }}: {{ current.text }}</h2>
+    <ul>
+    {% for answer in current.answers: %}
+        <li>{{answer}}</li>
+    {% endfor %}
+    </ul>
 
-    <!--answers (either true/false or multiple choice-->
-    <!--after user picks, briefly displays correct/incorrect, then move on to next question-->
-    <!--after final question, rediects to game over screen to show final score-->
-
+</main>
 
 {% include "footer.html" %}
