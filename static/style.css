@@ -9,6 +9,73 @@ body {
   background-color: #e5e5e5;
 }
 
+/****************** menu *************************/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #b81f24;
+    color: #fff;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav a {
+    cursor: pointer;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.navbar li {
+    list-style: none;
+    font-size: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo,
+.logo a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li {
+    padding: 5px 14px;
+
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/****************** category and score header *************************/
+#info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
 main {
     max-width: 900px;
     margin: 10px auto;
@@ -16,6 +83,10 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 20px;
   }
+
+.message {
+    margin: 20px 0;
+}
 
 #start-screen {
   width: 400px;
@@ -178,46 +249,25 @@ input[type=number]:not(:placeholder-shown)+label {
 
 /********************** button ************************/
 .btn {
-  background: rgb(66, 133, 244);
-  border: none;
-  color: white;
-  height: 5rem;
-  width: 10rem;
-  font-size: 2rem;
-  position: relative;
-  overflow: hidden;
-  margin: 10px;
-  cursor: pointer;
+    padding: 20px;
+    margin: 10px auto;
+    display:block;
+    flex-basis: 40%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+    max-width: 100px;
 }
 
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  width: 5rem;
-  height: 5rem;
-  background: rgba(255, 255, 255, 0.5);
-  transform-origin: center left;
-  transform: scale(0) translateX(-50%);
-  border-radius: 50%;
+.btn:active {
+    box-shadow: 0 0 #ffffff;
+    transform: translateY(4px);
 }
 
-.btn:hover::after {
-  animation: expand 1s ease;
-}
-
-@keyframes expand {
-  100% {
-    opacity: 0;
-    transform: scale(4) translateX(-50%);
-  }
-}
-
-.start-btn {
-  display: flex;
-  justify-content: center;
-}
+.blue {background: blue; color: white;}
 
 @media screen and (max-width: 750px) {
   #start-screen {
@@ -240,6 +290,12 @@ input[type=number]:not(:placeholder-shown)+label {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.answer-btn:active {
+    box-shadow: 0 0 #ffffff;
+    transform: translateY(4px);
 }
 
 .answer-btn:nth-child(1) {
@@ -257,4 +313,37 @@ input[type=number]:not(:placeholder-shown)+label {
 .answer-btn:nth-child(4) {
     background-color: red;
     color: white;
+}
+
+/***************************** media breakpoints ***********************/
+@media only screen and (max-width: 1015px) and (min-width: 870px){
+    .extra-nav-text {
+        display: none;
+    }
+}
+@media (max-width: 870px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: grey;
+        top: 65px;
+        right: 10px;
+        left: 10px;
+        text-align: center;
+        padding: 16px 0;
+        border-radius: 10px;
+        z-index: 5;
+    }
+
+    .menu li+li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }

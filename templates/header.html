@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>Trivia</title>
     <link rel="stylesheet" href={{url_for('static',filename='style.css')}}>
+    <script src="https://kit.fontawesome.com/52202eaccb.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav><a href={{url_for('home')}}>Home</a></nav>
+
+<nav class="navbar">
+  <div class="logo"><a href="https://ryanmontville.github.io/">Ryan Montville</a>
+      <span class="extra-nav-text"> | <a href={{url_for('home')}}>Trivia</a></span></div>
+  <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      <div class="menu">
+          <li><a href="https://github.com/RyanMontville/trivia">View <span class="extra-nav-text">GitHub </span>Repo</a></li>
+          <li><a href="https://www.github.com/RyanMontville" title="GitHub" target="blank"><i
+            class="fa-brands fa-github"></i><span class="link-desc"></span></a></li>
+          <li><a href="https://www.linkedin.com/in/ryanmontville" title="LinkedIn" target="blank"><i
+            class="fa-brands fa-linkedin-in"></i></a></li>
+      </div>
+  </ul>
+</nav>

@@ -1,7 +1,9 @@
 {% include "header.html" %}
-
 <main>
-    <h2>{{ score }}</h2>
+    <section id="info">
+        <h2>{{ cat }}</h2>
+        <h2>score: {{ score }}</h2>
+    </section>
     <h2>{{ number }}: {{ current.text }}</h2>
     <div id="answers">
         {% for answer in current.urls: %}

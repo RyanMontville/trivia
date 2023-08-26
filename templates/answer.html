@@ -1,12 +1,14 @@
 {% include "header.html" %}
-
 <main>
-    {{ message }}
-    {{ score }} / {{ num }}
+    <section id="info">
+        <h2>{{ cat }}</h2>
+        <h2>score: {{ score }}</h2>
+    </section>
+    <h2 class="message">{{ message }}</h2>
     {% if has_next: %}
-    <a href={{url_for('game')}} class="btn">Next Question</a>
+        <a href={{url_for('game')}} class="btn blue">Next Question</a>
     {% else: %}
-    <h2>End of questions</h2>
+    <a href={{url_for('home')}} class="btn blue">Play Again</a>
     {% endif %}
 </main>
 

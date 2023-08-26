@@ -7,7 +7,7 @@ import random
 app = Flask(__name__)
 
 
-trivia = TriviaBrain([])
+trivia = TriviaBrain([], "")
 
 
 @app.route("/")
@@ -34,6 +34,7 @@ def submit_form():
     question_data = data["results"]
     # Create a list of question objects
     questions = []
+    category = question_data[0]['category']
     for q in question_data:
         answers = []
         if q["type"] == "boolean":
@@ -56,16 +57,19 @@ def submit_form():
         new_question = Question(q["question"], answers, q["correct_answer"], q["type"])
         questions.append(new_question)
     global trivia
-    trivia = TriviaBrain(questions)
+    trivia = TriviaBrain(questions, category)
     return redirect("/game")
 
 
 @app.route("/game")
 def game():
+    score = trivia.score
     trivia.next_question()
     current_question = trivia.current_question
     question_number = trivia.question_number
-    return render_template("game.html", current=current_question, number=question_number)
+    category = trivia.category
+    return render_template("game.html", current=current_question,
+                           number=question_number, cat=category, score=score)
 
 
 @app.route("/answer/<choice>", methods=["GET"])
@@ -74,8 +78,9 @@ def check(choice):
     has_next = trivia.has_next()
     message = trivia.check_answer(choice)
     score = trivia.score
+    category = trivia.category
     return render_template("answer.html", message=message,
-                           has_next=has_next, num=question_number, score=score)
+                           has_next=has_next, num=question_number, score=score, cat=category)
 
 
 if __name__ == "__main__":
