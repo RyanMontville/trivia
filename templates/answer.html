@@ -2,13 +2,12 @@
 
 <main>
     {{ message }}
+    {{ score }} / {{ num }}
     {% if has_next: %}
     <a href={{url_for('game')}} class="btn">Next Question</a>
     {% else: %}
     <h2>End of questions</h2>
     {% endif %}
-
-    TODO: fix answer check, currently always says incorrect
 </main>
 
 {% include "footer.html" %}
