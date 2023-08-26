@@ -2,7 +2,7 @@ class TriviaBrain:
     def __init__(self, q_list, category):
         self.question_number = 0
         self.score_num = 0
-        self.score = ""
+        self.score = "0"
         self.question_list = q_list
         self.num_questions = len(q_list)
         self.current_question = None

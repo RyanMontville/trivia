@@ -346,4 +346,13 @@ input[type=number]:not(:placeholder-shown)+label {
     .hamburger {
         display: block;
     }
+
+    #info {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .answer-btn {
+        flex-basis: 100%;
+    }
 }

@@ -63,6 +63,8 @@ def submit_form():
 
 @app.route("/game")
 def game():
+    if trivia.num_questions == 0:
+        return redirect(url_for('home'))
     score = trivia.score
     trivia.next_question()
     current_question = trivia.current_question
@@ -74,6 +76,8 @@ def game():
 
 @app.route("/answer/<choice>", methods=["GET"])
 def check(choice):
+    if trivia.num_questions == 0:
+        return redirect(url_for('home'))
     question_number = trivia.question_number
     has_next = trivia.has_next()
     message = trivia.check_answer(choice)
