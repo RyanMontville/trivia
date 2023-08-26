@@ -1,12 +1,13 @@
 {% include "header.html" %}
 
 <main>
+    <h2>{{ score }}</h2>
     <h2>{{ number }}: {{ current.text }}</h2>
-    <ul>
-    {% for answer in current.answers: %}
-        <li>{{answer}}</li>
-    {% endfor %}
-    </ul>
+    <div id="answers">
+        {% for answer in current.urls: %}
+            <a href={{url_for('check',choice=answer.url)}} class="answer-btn">{{answer.text}}</a>
+        {% endfor %}
+    </div>
 
 </main>
 

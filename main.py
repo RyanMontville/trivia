@@ -57,7 +57,7 @@ def submit_form():
         questions.append(new_question)
     global trivia
     trivia = TriviaBrain(questions)
-    return redirect(url_for("game"))
+    return redirect("/game")
 
 
 @app.route("/game")
@@ -66,6 +66,11 @@ def game():
     current_question = trivia.current_question
     question_number = trivia.question_number
     return render_template("game.html", current=current_question, number=question_number)
+
+
+@app.route("/answer/<choice>", methods=["GET"])
+def check(choice):
+    return render_template("answer.html", user_answer=choice)
 
 
 if __name__ == "__main__":

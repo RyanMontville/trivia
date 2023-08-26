@@ -225,3 +225,36 @@ input[type=number]:not(:placeholder-shown)+label {
     margin: 5px auto;
   }
 }
+
+#answers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.answer-btn {
+    border-radius: 20px;
+    padding: 20px;
+    margin: 5px;
+    flex-basis: 40%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.answer-btn:nth-child(1) {
+    background-color: green;
+    color: white;
+}
+.answer-btn:nth-child(2) {
+    background-color: yellow;
+    color: black;
+}
+.answer-btn:nth-child(3) {
+    background-color: blue;
+    color: white;
+}
+.answer-btn:nth-child(4) {
+    background-color: red;
+    color: white;
+}
