@@ -70,7 +70,16 @@ def game():
 
 @app.route("/answer/<choice>", methods=["GET"])
 def check(choice):
-    return render_template("answer.html", user_answer=choice)
+    correct_answer = trivia.current_question.correct_answer
+    number_of_questions = len(trivia.question_list)
+    message = ""
+    has_next = True
+    if trivia.question_number == number_of_questions:
+        has_next = False
+    if correct_answer["url"] == choice:
+        message = "Correct"
+    message = f"Incorrect. The correct answer was {correct_answer['text']}"
+    return render_template("answer.html", message=message, has_next=has_next)
 
 
 if __name__ == "__main__":
